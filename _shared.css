@@ -1,0 +1,66 @@
+/* バズるかコケるか — 公開ページ共通スタイル
+   GitHub Pages 等に store/web/ の中身をそのまま置けば動きます。 */
+
+:root{
+  /* ★--brand は両テーマ共通。ヘッダーは白文字を載せるので、
+     ダークで明るく反転させると文字が読めなくなる（実際にそうなった）。
+     テーマで入れ替えるのはリンク色 --sky-d と地の色だけにする。 */
+  --brand:#5FA8CC; --brand-d:#3E7E9E;
+  --sky:#5FA8CC; --sky-d:#3E7E9E; --ink:#2A2536; --ink2:#565068; --dim:#8A83A0;
+  --line:#E4E0EE; --paper:#FFFFFF; --ground:#F4F6F9; --accent:#FFB05A;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --sky:#7FC4E4; --sky-d:#9FD6F0; --ink:#ECE9F3; --ink2:#B8B2C8; --dim:#9A93B0;
+    --line:#332E44; --paper:#221E30; --ground:#17141F;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--ground); color:var(--ink); line-height:1.85;
+  font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",
+              "Noto Sans JP",sans-serif;
+  font-size:15px;
+}
+header{
+  background:linear-gradient(160deg,var(--brand),var(--brand-d));
+  color:#fff; padding:34px 22px 30px;
+}
+header .wrap{max-width:720px;margin:0 auto}
+header h1{margin:0 0 4px;font-size:23px;font-weight:800;letter-spacing:.01em}
+header p{margin:0;font-size:13px;color:rgba(255,255,255,.93)}
+main{max-width:720px;margin:0 auto;padding:26px 22px 70px}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  padding:22px 22px 6px;margin-bottom:18px;
+}
+h2{font-size:17px;font-weight:800;margin:26px 0 8px;padding-top:4px}
+h2:first-child{margin-top:0}
+h3{font-size:14px;font-weight:800;margin:20px 0 6px;color:var(--ink2)}
+p,li{color:var(--ink2);font-size:14px}
+ul{padding-left:1.25em}
+li{margin-bottom:5px}
+a{color:var(--sky-d);text-decoration:underline;text-underline-offset:2px}
+strong{color:var(--ink)}
+.updated{font-size:12px;color:var(--dim);margin-bottom:20px}
+.note{
+  background:color-mix(in srgb,var(--accent) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+  border-radius:12px;padding:13px 15px;margin:16px 0;
+}
+.note p{margin:0;font-size:13px}
+nav.crumbs{max-width:720px;margin:0 auto;padding:16px 22px 0;font-size:13px}
+footer{
+  max-width:720px;margin:0 auto;padding:0 22px 50px;
+  color:var(--dim);font-size:12px;border-top:1px solid var(--line);
+}
+footer p{font-size:12px;color:var(--dim);margin:16px 0 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--ink);font-weight:800;width:38%}
+td{color:var(--ink2)}
+.contact{
+  display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+  padding:11px 20px;border-radius:999px;font-weight:800;font-size:14px;margin-top:6px;
+}
